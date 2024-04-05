@@ -1,4 +1,6 @@
-exports.registerUser = (req, res) => {
+const User = require('../models/register');
+
+const registerUser = (req, res) => { 
     // Get form data from request body
     const { id, fullName, address, status } = req.body;
     
@@ -29,4 +31,8 @@ exports.registerUser = (req, res) => {
 
     // Send response
     res.status(200).json(responseData);
+};
+
+module.exports = {
+    registerUser
 };
