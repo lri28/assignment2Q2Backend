@@ -1,5 +1,7 @@
 const User = require('../models/register');
 
+const url = 'https://lri28.github.io/assignment2Q2Frontend/'
+
 const registerUser = (req, res) => { 
     // Get form data from request body
     const { id, fullName, address, status } = req.body;
@@ -30,9 +32,13 @@ const registerUser = (req, res) => {
     };
 
     // Send response
-    res.status(200).json(responseData);
+    //res.status(200).json(responseData);
+    let myurl = url
+    res.redirect(myurl);
+    
 };
 
 module.exports = {
-    registerUser
+    registerUser,
+    User
 };
